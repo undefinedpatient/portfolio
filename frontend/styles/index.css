@@ -1,0 +1,144 @@
+body{
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+header{
+    position: relative;
+    display: flex;
+        flex-direction: column;
+        border: 1px solid;
+        justify-content: space-evenly;
+        align-self: center;
+        gap: 12px;
+    flex: 1 1 0;
+    background-color: transparent;
+    left: 0;
+    height: 90vh;
+    min-width: 180px;
+    width: max-content;
+    max-width: 240px;
+    padding: 8px;
+    margin: 16px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    .logo{
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--textColor-default);
+    }
+    &>nav{
+        position: relative;
+        display: flex;
+            flex-direction: column;
+            
+            gap: 32px;
+    }
+    & a{
+        position: relative;
+        display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end;
+            gap: 16px;
+        font-size: 1.2rem;
+        padding: 16px;
+        text-align: right;
+        transition: all 0.3s ease;
+        &::after{
+            content: "";
+            position: absolute; 
+                bottom: 50%;
+                right: 0;
+            background-color: white;
+            height: 0%;
+            width: 1%;
+            transition: all 0.2s ease;
+        }
+        &:hover{
+            &::after{
+                bottom: 0%;
+                height: 100%;
+            }
+            transform: scale(1.1);
+        }
+        &.active{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+    
+}
+div.sectionContainer{
+    position: relative;
+    display: flex;
+        flex-direction: column;
+    flex: 4 1 0;
+    overflow: scroll;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+section{
+    position: relative;
+    border: 1px solid;
+    flex: 4 4 0;
+    padding: 96px;
+    margin: 0;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.2 ease;
+}
+img.backgroundImg{
+    display: block;
+    position: fixed;
+        top: 0;
+        left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    filter: blur(1px) brightness(60%);
+}
+img[src*="svg"]{
+    background: transparent;
+    color: white;
+    width: 24px;
+    height: 24px;
+    filter: invert(100);
+} 
+div.homeImg{
+    & img{
+        height: 270px;
+        border: 2px solid;
+    }
+    
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.typewriter{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .1em solid var(--textColor-default); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    animation: 
+        typing 3s steps(40, start),
+        blink-caret 0.8s steps(1) infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--textColor-default); }
+}
