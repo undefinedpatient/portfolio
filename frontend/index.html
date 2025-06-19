@@ -13,18 +13,18 @@
     <header>
         <a href="#" class="logo">Patient</a>
         
-        <nav>
-            <a href="#" class="home active">Home<img src="./assets/svgs/house.svg"></img></a>
-            <a href="#" class="webDev">Web Dev<img src="./assets/svgs/globe.svg"></img></a>
-            <a href="#" class="softwareDev">Software Dev<img src="./assets/svgs/mobile.svg"></img></a>
-            <a href="#" class="artist">Artist<img src="./assets/svgs/palette.svg"></img></a>
-            <a href="#" class="contact">Contact<img src="./assets/svgs/envelope.svg"></img></a>
+        <nav id="navBar">
+            <a href="#" class="home active" onClick="scrollToSection(event)">Home<img src="./assets/svgs/house.svg"></img></a>
+            <a href="#" class="webDev" onClick="scrollToSection(event)">Web Dev<img src="./assets/svgs/globe.svg"></img></a>
+            <a href="#" class="softwareDev" onClick="scrollToSection(event)">Software Dev<img src="./assets/svgs/mobile.svg"></img></a>
+            <a href="#" class="artist" onClick="scrollToSection(event)">Artist<img src="./assets/svgs/palette.svg"></img></a>
+            <a href="#" class="contact" onClick="scrollToSection(event)">Contact<img src="./assets/svgs/envelope.svg"></img></a>
         </nav>
     </header>
     <img class="backgroundImg" src="./assets/imgs/background_webDev.png"></img>
     <!-- <img class="backgroundImg" src="./assets/imgs/background_nightsky.png"></img> -->
     <div class="sectionContainer" id="sectionContainer">
-        <section class="home" id="homeSection">
+        <section class="homeSection" id="homeSection">
             <div class="homeImg">
                 <img src="./assets/imgs/profile.png">
             </div>
@@ -37,9 +37,27 @@
             </p>
             
         </section>
-        <section class="webDev" id="webDevSection">
+        <section class="webDevSection" id="webDevSection">
             <div></div>
             <h1 class="typewriter">Web</h1>
+            <h3>Web</h3>
+            <p>
+                I am Disordered Patient, a Blender 3D generalist.
+            </p>
+
+        </section>
+        <section class="softwareDevSection" id="softwareDevSection">
+            <div></div>
+            <h1 class="typewriter">Software Dev</h1>
+            <h3>Web</h3>
+            <p>
+                I am Disordered Patient, a Blender 3D generalist.
+            </p>
+
+        </section>
+        <section class="artistSection" id="artistSection">
+            <div></div>
+            <h1 class="typewriter">Artist</h1>
             <h3>Web</h3>
             <p>
                 I am Disordered Patient, a Blender 3D generalist.
