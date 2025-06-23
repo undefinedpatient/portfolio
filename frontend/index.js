@@ -4,10 +4,8 @@ const observerTargets = document.querySelectorAll(".typewriter");
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((value, index)=>{
         if(value.isIntersecting){
-            console.log("Added");
             value.target.classList.add("active");
         }else{
-            console.log("Removed");
             value.target.classList.remove("active");
         }
     });
@@ -38,16 +36,15 @@ function scrollToSection(event){
             }
         }
     )
-    event.target.classList.add("active");
 }
 
 // Called Everytime the Scrolling event is fired.
 sectionContainerElement.addEventListener("scroll", (event)=>{
     let value = (numOfSection-1)*sectionContainerElement.scrollTop/(sectionContainerElement.scrollHeight-sectionContainerElement.clientHeight);
-    // Array.from(navBarElement.children).forEach((value)=>{
-    //     value.classList.remove("active");
-    // });
-    // navBarElement.children[Math.floor(value)].classList.add("active");
+    Array.from(navBarElement.children).forEach((value)=>{
+        value.classList.remove("active");
+    });
+    navBarElement.children[Math.floor(value)].classList.add("active");
 
     try{
         document.getElementById("homeSection").style.opacity = `${quadraticInterpolation(value, 2, 0)}`;

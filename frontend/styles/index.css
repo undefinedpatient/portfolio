@@ -85,6 +85,8 @@ div.sectionContainer{
 }
 section{
     position: relative;
+    display: flex;
+        flex-direction: column;
     flex: 4 4 0;
     padding: 96px;
     margin: 0;
@@ -98,8 +100,11 @@ img.backgroundImg{
     position: fixed;
         top: 0;
         left: 0;
-    height: 100vh;
     z-index: -1;
+    object-fit: cover; 
+    height: 100%;
+    width: 100%;
+
     filter: blur(1px) brightness(60%);
 }
 img[src*="svg"]{
@@ -108,6 +113,7 @@ img[src*="svg"]{
     width: 24px;
     height: 24px;
     filter: invert(100);
+    
 } 
 div.homeImg{
     & img{
@@ -138,4 +144,25 @@ a{
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--textColor-default); }
+}
+
+.webDevCard{
+    position: relative;
+    display: block;
+        align-self:baseline;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    min-width: 240px;
+    max-width: 960px;
+    /* white-space: warp; */
+    padding: 16px;
+    backdrop-filter: blur(14px);
+    border: 1px solid;
+        border-radius: 8px;
+    transition: all 0.2s ease;
+    &:hover{
+        
+        transform: scale(1.1);
+    }
 }
