@@ -1,5 +1,21 @@
 
 console.log("index.js Loaded");
+const observerTargets = document.querySelectorAll(".typewriter");
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((value, index)=>{
+        if(value.isIntersecting){
+            console.log("Added");
+            value.target.classList.add("active");
+        }else{
+            console.log("Removed");
+            value.target.classList.remove("active");
+        }
+    });
+});
+observerTargets.forEach((value)=>{
+    observer.observe(value);
+});
+
 const numOfSection = 5;
 const sectionContainerElement = document.getElementById("sectionContainer");
 const navBarElement = document.getElementById("navBar");
@@ -7,7 +23,7 @@ const navBarElement = document.getElementById("navBar");
 function quadraticInterpolation(x, speed = 1, offset = 0){
     return Math.max( (-((speed*(x-offset))**2)+1), 0);
 }
-
+// Called Everytime the button in the NavBar is clicked.
 function scrollToSection(event){
     const buttonList = event.target.parentElement.children;
     // 
@@ -24,10 +40,15 @@ function scrollToSection(event){
     )
     event.target.classList.add("active");
 }
+
+// Called Everytime the Scrolling event is fired.
 sectionContainerElement.addEventListener("scroll", (event)=>{
-    // let value = sectionContainerElement.scrollTo;
     let value = (numOfSection-1)*sectionContainerElement.scrollTop/(sectionContainerElement.scrollHeight-sectionContainerElement.clientHeight);
-    // clearTimeout(timeout);
+    // Array.from(navBarElement.children).forEach((value)=>{
+    //     value.classList.remove("active");
+    // });
+    // navBarElement.children[Math.floor(value)].classList.add("active");
+
     try{
         document.getElementById("homeSection").style.opacity = `${quadraticInterpolation(value, 2, 0)}`;
         document.getElementById("webDevSection").style.opacity = `${quadraticInterpolation(value, 2, 1)}`;
@@ -37,10 +58,9 @@ sectionContainerElement.addEventListener("scroll", (event)=>{
     } catch(error){
         console.log(error);
     }
-    Array.from(navBarElement.children).forEach((value)=>{
-        value.classList.remove("active");
-    })
-    navBarElement.children[Math.floor(value)].classList.add("active");
+    
     
 });
+
+
 console.log("index.js Ended");

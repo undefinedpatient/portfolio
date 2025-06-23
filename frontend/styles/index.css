@@ -114,24 +114,23 @@ div.homeImg{
         height: 270px;
         border: 4px solid;
     }
-    
 }
 a{
     color: white;
     text-decoration: none;
 }
-.typewriter{
+.typewriter.active{
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .1em solid var(--textColor-default); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     animation: 
-        typing 3s steps(40, start),
+        typing 2s steps(80, start),
         blink-caret 0.8s steps(1) infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-    from { width: 0 }
+    from { width: 0% }
     to { width: 100% }
 }
 
