@@ -44,7 +44,8 @@ sectionContainerElement.addEventListener("scroll", (event)=>{
     Array.from(navBarElement.children).forEach((value)=>{
         value.classList.remove("active");
     });
-    navBarElement.children[Math.floor(value)].classList.add("active");
+    // 0.2 is the 20% threshold
+    navBarElement.children[Math.floor(value+0.2)].classList.add("active");
 
     try{
         document.getElementById("homeSection").style.opacity = `${quadraticInterpolation(value, 2, 0)}`;

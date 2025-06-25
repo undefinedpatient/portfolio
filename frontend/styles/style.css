@@ -1,37 +1,39 @@
-*{
+* {
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --textColor-default: rgb(0, 255, 200);
     --textColor-highlighted: rgb(0, 184, 144);
-
     color: white;
     background-color: rgb(43, 43, 43);
     font-family: monospace;
     font-size: 16px;
-    box-sizing: border-box;
     margin: 0;
 }
 
-h1{
+h1 {
     font-size: 3.6rem;
     margin: 0;
-    /* min-width: min-content; */
     max-width: max-content;
 }
-h2{
+
+h2, h3, h4, h5 {
     margin: 1em;
+}
+
+h2 {
     font-size: 3rem;
 }
-h3{
-    margin: 1em;
+
+h3 {
     font-size: 2rem;
 }
-h4{
-    margin: 1em;
+
+h4 {
     font-size: 1.6rem;
 }
-h5{
-    margin: 1em;
+
+h5 {
     font-size: 1.2rem;
 }
