@@ -209,7 +209,36 @@ button.swapPage{
         transform: scale(1.01);
     }
     a.webLink{
+        position: absolute;
+            right: 1rem;
+            top: 1rem;
+        display: flex;
+        width: 3rem;
+        height: 3rem;
+        padding: 8px;
+        transition: all 0.2s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.webLinkContainer{
     position: absolute;
+        top: 0rem;
+        right: 0rem;
+    display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    padding: 0;
+    width: max-content;
+    margin: 0;
+}
+a.webLink{
+    position: relative;
         right: 1rem;
         top: 1rem;
     display: flex;
@@ -224,5 +253,4 @@ button.swapPage{
         width: 100%;
         height: 100%;
     }
-}
 }
