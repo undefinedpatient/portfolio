@@ -8,135 +8,95 @@
     <link rel="stylesheet" href="./styles/index.css">
     <title>Disordered Patient</title>
 </head>
-
 <body>
+    <!--The left nagivation bar-->
     <header>
         <a href="#" class="logo">Patient</a>
-        
         <nav id="navBar">
-            <a href="#" class="home active" onClick="scrollToSection(event)">Home<img src="./assets/svgs/house.svg"></img></a>
-            <a href="#" class="webDev" onClick="scrollToSection(event)">Web Dev<img src="./assets/svgs/globe.svg"></img></a>
-            <a href="#" class="softwareDev" onClick="scrollToSection(event)">Software Dev<img src="./assets/svgs/mobile.svg"></img></a>
-            <a href="#" class="artist" onClick="scrollToSection(event)">Artist<img src="./assets/svgs/palette.svg"></img></a>
-            <a href="#" class="contact" onClick="scrollToSection(event)">Contact<img src="./assets/svgs/envelope.svg"></img></a>
+            <a href="#" class="home active" onclick="scrollToSection(event)">
+                Home
+                <img src="./assets/svgs/house.svg" alt="Home icon">
+            </a>
+            <a href="#" class="webDev" onclick="scrollToSection(event)">
+                Web Dev
+                <img src="./assets/svgs/globe.svg" alt="Web Dev icon">
+            </a>
+            <a href="#" class="softwareDev" onclick="scrollToSection(event)">
+                Software Dev
+                <img src="./assets/svgs/mobile.svg" alt="Software Dev icon">
+            </a>
+            <a href="#" class="artist" onclick="scrollToSection(event)">
+                Artist
+                <img src="./assets/svgs/palette.svg" alt="Artist icon">
+            </a>
+            <a href="#" class="contact" onclick="scrollToSection(event)">
+                Contact
+                <img src="./assets/svgs/envelope.svg" alt="Contact icon">
+            </a>
         </nav>
     </header>
-   
+    <!--The Right Part for content display-->
     <div class="sectionContainer" id="sectionContainer">
+        <!-- Home Section -->
         <section class="homeSection" id="homeSection">
-            <img class="backgroundImg" src="./assets/imgs/background_webDev.png"></img>
+            <img class="backgroundImg" src="./assets/imgs/background_webDev.png" alt="Background image">
             <div class="homeImg">
-                <img src="./assets/imgs/profile.png">
+                <img src="./assets/imgs/profile.png" alt="Profile picture">
             </div>
-
             <h1 class="typewriter">Hello, I am <span class="name">Ethan</span></h1>
             <h3>A Year 2 Computer Science Undergraduate</h3>
             <p>
-                I am Ethan, a 2nd year Undergraduate studying at HKUST, focusing on Computer Science with an AI extended Major
-                I learn Web development, Software Development, Computer Graphics, besides engineering, I am also an 3D artist focusing on Block style Rendering.
+                I am Ethan, a 2nd year Undergraduate studying at HKUST, focusing on Computer Science with an AI extended Major.
+                I learn Web development, Software Development, Computer Graphics, and besides engineering, I am also a 3D artist focusing on Block style Rendering.
             </p>
-            
         </section>
+
+        <!-- Web Dev Section -->
         <section class="webDevSection" id="webDevSection">
-            <img class="backgroundImg" src="./assets/imgs/background_webDev.png"></img>
+            <img class="backgroundImg" src="./assets/imgs/background_webDev.png" alt="Web Dev background">
             <h1 class="typewriter">Web Dev</h1>
             <h3>Personal Projects:</h3>
-            <div class="verticalCardContainer">
-                <div class="card">
-                    <h5>
-                        25/05/2025 - 19/06/2025 | HurdleOver (React/ExpressJs/MongoAtlas)
-                    </h5>
-                    <p>
-                        Developed a Web forum for community animators to post and answer technical questions online.
-                        The project aims to learn React Framework, as well as backend API with ExpressJs and MongoDB
-                    </p>
-                    <a class="webLink" target="_blank" href="https://github.com/undefinedpatient/hurdleOver"><img src="./assets/svgs/github.svg"></a>
-                </div>
-                <div class="card">
-                    <h5>
-                        ???
-                    </h5>
-                    <p>
-                        ???
-                    </p>
-                    <a class="webLink" target="_blank" href="#"><img src="./assets/svgs/github.svg"></a>
-                </div>
-            </div>
-            
-            
-
         </section>
+
+        <!-- Software Dev Section -->
         <section class="softwareDevSection" id="softwareDevSection">
-            <img class="backgroundImg" src="./assets/imgs/background_webDev.png"></img>
+            <img class="backgroundImg" src="./assets/imgs/background_webDev.png" alt="Software Dev background">
             <h1 class="typewriter">Software Dev</h1>
             <h3>Personal Projects:</h3>
-            <p>
-                Empty for now
-            </p>
-
+            <p>Currently in progress</p>
         </section>
+
+        <!-- Artist Section -->
         <section class="artistSection" id="artistSection">
-            <img class="backgroundImg" src="./assets/imgs/background_minecraft.png"></img>
-            <section class="page" id="personalBoard">
+            <img class="backgroundImg" src="./assets/imgs/background_minecraft.png" alt="Artist background">
+            <div class="page" id="personalBoard">
                 <h1>Artist</h1>
-                <h3>A Blender 3D Generalist focus on blocky style rendering</h3>
-                <div class="webLinkContainer">
-                    <a target="_blank" class="webLink" href="https://www.deviantart.com/disorderedpatient"><img src="./assets/svgs/deviantArt.svg"></a>
-                    <a target="_blank" class="webLink" href="https://www.artstation.com/disorderedpatient"><img src="./assets/svgs/artstation.svg"></a>
-                </div>
-                
-                <h5>Personal Project</h5>
-                <div class="verticalCardContainer">
-                    <div class="card">
-                        <h5>
-                            2023 | LightHouse
-                        </h5>
-                        <a class="webLink" target="_blank" href="https://github.com/undefinedpatient/hurdleOver"><img src="./assets/svgs/youtube.svg"></a>
-                    </div>
-                    <div class="card">
-                        <h5>
-                            2024 | Reality
-                        </h5>
-                        <a class="webLink" target="_blank" href="https://github.com/undefinedpatient/hurdleOver"><img src="./assets/svgs/youtube.svg"></a>
-                    </div>
-                    <div class="card">
-                        <h5>
-                            2024 | Don't Be A Stranger
-                        </h5>
-                        <a class="webLink" target="_blank" href="https://github.com/undefinedpatient/hurdleOver"><img src="./assets/svgs/youtube.svg"></a>
-                    </div>
-                </div>
-                
-                <button class="swapPage">The Mimickers<img src="./assets/svgs/arrow-right.svg"></button>
-            </section>
-            <section id="workProject"></section>
-            
-            
-            
-
+                <h3>A Blender 3D Generalist focusing on blocky style rendering</h3>
+            </div>
+            <div id="workProject"></div>
         </section>
+
+        <!-- Contact Section -->
         <section class="contactSection" id="contactSection">
             <h1>Contact</h1>
-
-            <div>
+            <div class="contact-info">
                 <h5>Email</h5>
-                School Email: whchoiaf@connect.ust.hk<br>
-                Dev Email: undefinedpatient@gmail.com<br>
-                Artist Email: disorderedpatient@gmail.com
+                <p>School Email: whchoiaf@connect.ust.hk</p>
+                <p>Dev Email: undefinedpatient@gmail.com</p>
+                <p>Artist Email: disorderedpatient@gmail.com</p>
             </div>
-            <div>
+            <div class="contact-info">
                 <h5>Discord</h5>
-                username : disorderedpatient
+                <p>Username: disorderedpatient</p>
             </div>
-            <div>
+            <div class="contact-info">
                 <h5>Twitter</h5>
-                https://x.com/und0fined
+                <p><a href="https://x.com/und0fined">https://x.com/und0fined</a></p>
             </div>
-
         </section>
     </div>
-    <script src="./index.js">
-    </script>
-    
+
+    <script src="./index.js"></script>
 </body>
 </html>
+

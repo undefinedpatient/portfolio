@@ -1,4 +1,3 @@
-
 console.log("index.js Loaded");
 const observerTargets = document.querySelectorAll(".typewriter");
 const observer = new IntersectionObserver((entries)=>{
