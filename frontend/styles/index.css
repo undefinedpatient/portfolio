@@ -24,68 +24,68 @@ header {
     height: 90vh;
     padding: 8px;
     margin: 16px;
-    border: 1px solid;
+    border: 2px solid;
     background-color: transparent;
     backdrop-filter: blur(10px);
     z-index: 1;
 
-.logo {
-    font-weight: bold;
-    font-size: 2rem;
-    color: var(--textColor-default);
-}
+    & .logo {
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--textColor-default);
+    }
 
-nav {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
+    & nav {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
 
-a {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    gap: 16px;
-    font-size: 1.2rem;
-    padding: 16px;
-    text-align: right;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    transform-origin: right;
+    & a {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+        gap: 16px;
+        font-size: 1.2rem;
+        padding: 16px;
+        text-align: right;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        transform-origin: right;
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 50%;
-      background-color: white;
-      height: 0%;
-      width: 1%;
-      transition: all 0.2s ease;
-}
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 50%;
+          background-color: white;
+          height: 0%;
+          width: 1%;
+          transition: all 0.2s ease;
+        }
 
-&:hover {
-  transform: scale(1.1);
+        &:hover {
+          transform: scale(1.1);
 
-  &::after {
-    bottom: 0%;
-    height: 100%;
-  }
-}
+          &::after {
+            bottom: 0%;
+            height: 100%;
+          }
+        }
 
-&.active {
-  text-decoration: underline;
-  font-weight: bold;
-}
-}
+        &.active {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+    }
 }
 
 /* Section Container */
-div.sectionContainer {
+.sectionContainer {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -99,46 +99,45 @@ div.sectionContainer {
 
 /* Section Styles */
 section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 4 4 0;
-  min-height: 100%;
-  height: 100vh;
-  padding: 64px;
-  margin: 0;
-  border: 1px solid;
-  transition: all 0.2s ease;
- /* Set the font for each Section*/
-  &.webDevSection,
-  &.softwareDevSection {
-    font-family: "Fira Code", monospace;
-  }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 4 4 0;
+    min-height: 100%;
+    height: 100vh;
+    padding: 64px;
+    margin: 0;
+    transition: all 0.2s ease;
+    /* Set the font for each Section*/
+    &.webDevSection,
+    &.softwareDevSection {
+        font-family: "Fira Code", monospace;
+    }
 
-  &.artistSection,
-  &.contactSection {
-    font-family: Georgia, "Times New Roman", Times, serif;
-  }
-    
-  &.page {
-    padding: 0;
-    border: 0;
-  }
+    &.artistSection,
+    &.contactSection {
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    &.page {
+        padding: 0;
+        border: 0;
+    }
 }
 
 /* Image Styles */
 img.backgroundImg {
-  display: inline;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: transparent;
-  filter: brightness(60%);
-  pointer-events: none;
-  z-index: -1;
+    display: inline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: transparent;
+    filter: brightness(60%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 img[src*="svg"] {
@@ -155,40 +154,80 @@ div.homeImg {
     border: 4px solid;
   }
 }
+.timelineContainer{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height:fit-content;
+    max-height: 80%;
+    max-width: 100%;
 
+}
+.timeline{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: calc(-1rem + 0.1rem);
+        bottom: -1rem;
+        min-width:1rem;
+        min-height:1rem;
+        width: 2rem;
+        height: 2rem;
+        background-image: url("../assets/svgs/diamond.svg");
+        background-size: cover;
+        filter: invert(1);
+    }
+}
+.timelineSection{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 16px;
+    border-left: 0.2rem solid white;
+}
+.timelineItem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+    border: 0.1rem solid;
+    &:timeMonth{
+    
+    }
+
+}
+.timelineDate{
+    display:block;
+    padding: 0.2rem 1rem;
+    position:relative;
+    background: transparent;
+    font-weight: bold;
+    border:0.2rem solid white;
+    width: fit-content;
+}
 /* Typewriter Animation */
 .typewriter.active {
-  overflow: hidden;
-  border-right: 0.1em solid var(--textColor-default);
-  white-space: nowrap;
-  animation:
-    typing 1s steps(80, start),
-    blink-caret 0.8s steps(1) infinite;
+    overflow: hidden;
+    border-right: 0.1em solid var(--textColor-default);
+    white-space: nowrap;
+    animation:
+        typing 1s steps(80, start),
+        blink-caret 0.8s steps(1) infinite;
 }
 
-/* Button Styles */
-button.swapPage {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1em;
-  padding: 0.6em;
-  background-color: transparent;
-  border: 2px solid;
-  backdrop-filter: blur(16px);
-  text-align: center;
-  height: fit-content;
-  width: fit-content;
-
-  &:hover {
-    filter: invert(100%);
-    cursor: pointer;
-  }
-}
 
 /* Animations */
 @keyframes typing {

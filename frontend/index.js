@@ -12,7 +12,6 @@ const observer = new IntersectionObserver((entries)=>{
 observerTargets.forEach((value)=>{
     observer.observe(value);
 });
-
 const numOfSection = 5;
 const sectionContainerElement = document.getElementById("sectionContainer");
 const navBarElement = document.getElementById("navBar");
