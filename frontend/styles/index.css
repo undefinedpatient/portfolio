@@ -201,9 +201,9 @@ div.homeImg {
     position: relative;
     display: flex;
     flex-direction: column;
-
+    backdrop-filter: blur(2px);
     padding: 1rem;
-    border: 0.1rem solid;
+    border: 0.2rem solid;
     &:timeMonth{
     
     }
