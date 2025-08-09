@@ -180,7 +180,7 @@ section[id="main"]{
     user-select: none;
     background-image: 
         linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)),
-        url('../assets/imgs/nightsky.jpg');
+        url('./assets/imgs/nightsky.jpg');
     & h1{
         border-bottom: 1px solid;
         padding: 1rem 0rem;
@@ -197,7 +197,7 @@ section[id="description"]{
     padding: 4rem;
     background-image: 
         linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)),
-        url('../assets/imgs/cat.jpg');
+        url('./assets/imgs/cat.jpg');
     gap: 1rem;
     & div[class="info-column"]{
         position: relative;
@@ -286,7 +286,7 @@ section[id="dev"]{
     padding: 4rem;
     background-image: 
         linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)), 
-        url('../assets/imgs/code.jpg');
+        url('./assets/imgs/code.jpg');
     & p{
         border-top: 1px solid;
         padding: 1rem;
@@ -333,13 +333,13 @@ div[class="card"]{
     width: 100%;
     &[id="individual-works"]{
         background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), 20%,rgba(0, 0, 0, 0.349)), 
-        url('../assets/imgs/tv.jpg');
+        url('./assets/imgs/tv.jpg');
         background-size: cover;
         border-right: 2px solid var(--border-color);
     }
     &[id="collaborations"]{
         background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), 20%,rgba(0, 0, 0, 0.349)), 
-        url('../assets/imgs/radio_room.jpg');
+        url('./assets/imgs/radio_room.jpg');
         background-size: cover;
         border-left: 2px solid var(--border-color);
     }
