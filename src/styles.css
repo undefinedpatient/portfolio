@@ -1,0 +1,375 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: aliceblue;
+    & h1{
+        font-size: 4.2rem;
+    }
+    & h2{
+        font-size: 3.6rem;
+    }
+    & h3{
+        font-size: 2.4rem;
+    }
+    & h4{
+        font-size: 2rem;
+    }
+    & h5{
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
+    & h6{
+        font-size: 1.4rem;
+        font-weight: 100;
+    }
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+:root{
+    --testColor: rgb(255, 0, 255);
+    --border-color: rgb(255, 255, 255);
+    
+}
+
+body{
+    position: relative;
+    display: flex;
+        flex-direction: column;
+    background-size: cover;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+nav[class="navbar"]{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    position: fixed;
+        bottom: 10vh; /*Refer to height*/
+        left: -6rem; 
+    z-index: 1;
+    width: fit-content;
+    height: 80vh;
+    padding: 1rem;
+    border: 4px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.473);
+    backdrop-filter: blur(4px);
+    color: white;
+    transition: all 0.4s ease;
+    
+    & ul{
+        display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        transition: all 0.2s ease;
+        opacity: 0;
+        list-style: none;
+    }
+    & a{
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: white;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    & span{
+        position: absolute;
+            top: 2rem;
+            right: 0;
+        writing-mode: sideways-lr;
+        font-size: 2rem;
+        transition: all 0.2s ease;
+        opacity: 1;
+        letter-spacing: 0.4rem;
+    }
+    &[data-is-active="true"]{
+        left: 1rem; 
+        & span{
+            opacity: 0;
+        }
+        & ul{
+            opacity: 1;
+        }
+    }
+
+}
+nav[class="contactbar"]{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    position: fixed;
+        bottom: 10vh; /*Refer to height*/
+        right: -6rem; 
+    z-index: 1;
+    width: fit-content;
+    height: 80vh;
+    padding: 1rem;
+    border: 4px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.473);
+    backdrop-filter: blur(4px);
+    color: white;
+    transition: all 0.4s ease;
+    & ul{
+        display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        text-align: right;
+        list-style: none;
+        transition: all 0.2s ease;
+        opacity: 0;
+    }
+    & a{
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: white;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    & span{
+        position: absolute;
+            top: 2rem;
+            left: 0;
+        writing-mode: sideways-rl;
+        letter-spacing: 0.4rem;
+        font-size: 2rem;
+        transition: all 0.2s ease;
+        opacity: 1;
+    }
+    &[data-is-active="true"]{
+        right: 1rem; 
+        & span{
+            opacity: 0;
+        }
+        & ul{
+            opacity: 1;
+        }
+    }
+
+}
+/* Each section wrap all the content inside */
+section{
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    position: relative;
+    min-width: 100vw; /* Turn the min-width to width to let the body flex works*/
+    min-height: 100vh;
+    overflow-y: scroll;
+    background-size: cover;
+    & div{
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
+}
+
+section[id="main"]{
+    user-select: none;
+    background-image: 
+        linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)),
+        url('../assets/imgs/nightsky.jpg');
+    & h1{
+        border-bottom: 1px solid;
+        padding: 1rem 0rem;
+    }
+    & h6{
+        padding: 1rem 0rem;
+    }
+}
+section[id="description"]{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+    padding: 4rem;
+    background-image: 
+        linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)),
+        url('../assets/imgs/cat.jpg');
+    gap: 1rem;
+    & div[id="description"]{
+        flex: 3;
+        backdrop-filter: blur(16px);
+        position: relative;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        padding: 2rem;
+        overflow-y: scroll;
+        border: 4px solid var(--border-color);
+        /* Add a horizontal line above the description */
+        & p{
+            border-top: 1px solid;
+            padding: 1rem;
+        }
+    }
+    & div[id="contact"]{
+        padding: 2rem;
+        border: 4px solid var(--border-color);
+    }
+
+    & div[id="contact"] ul{
+        display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        list-style: none;
+
+    }
+    & img[class="profile"]{
+        width: clamp(10vw, 240px, 20vw);
+        border: 4px solid var(--border-color);
+    }
+    & div[id="traits"]{
+        flex: 1;
+        position: relative;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        padding: 2rem;
+        overflow-y: scroll;
+        backdrop-filter: blur(16px);
+        border: 4px solid var(--border-color);
+        & h4{
+            border-bottom: 1px solid;
+            padding: 1rem 0rem;
+        }
+    }
+    & div[id="skillset"]{
+        flex: 1;
+        position: relative;
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        padding: 2rem;
+        overflow-y: scroll;
+        backdrop-filter: blur(16px);
+        border: 4px solid var(--border-color);
+        & h4{
+            border-bottom: 1px solid;
+            padding: 1rem 0rem;
+        }
+    }
+}
+section[id="dev"]{
+    position: relative;
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 4rem;
+    padding: 4rem;
+    background-image: 
+        linear-gradient(0deg, rgba(255, 255, 255, 0.3), 10%,rgba(0, 0, 0, 0.4)), 
+        url('../assets/imgs/code.jpg');
+    & p{
+        border-top: 1px solid;
+        padding: 1rem;
+    }
+}
+section[id="art"]{
+    position: relative;
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+    background-color: black;
+}
+div[class="container"]{
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+div[class="card"]{
+    flex: 1;
+    display: flex;
+    height: 100%;
+    
+    &[id="individual-works"]{
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), 20%,rgba(0, 0, 0, 0.349)), 
+        url('../assets/imgs/tv.jpg');
+        background-size: cover;
+        border-right: 2px solid var(--border-color);
+    }
+    &[id="collaborations"]{
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.5), 20%,rgba(0, 0, 0, 0.349)), 
+        url('../assets/imgs/radio_room.jpg');
+        background-size: cover;
+        border-left: 2px solid var(--border-color);
+    }
+    & h4{
+        padding: 1rem 0rem;
+    }
+    & p{
+        border-top: 1px solid;
+        padding: 1rem;
+        max-width: 24rem;
+        line-height: 2rem;
+    }
+}
+div[class="timeline-description"]{
+    flex: 1;
+    display: flex;
+        flex-direction: column;
+        align-items: start;
+    border: 4px solid;
+    padding: 2rem;
+    max-width: 80%;
+    max-width: 36rem;
+    line-height: 2rem;
+}
+ul[class="timeline"]{
+    position: relative;
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    width: fit-content;
+    border-left: 4px solid;
+    height: fit-content;
+    & li[class="timeline-item"]{
+        /* flex: 1; */
+        list-style: none;
+    }
+    & li[class="subtimeline-item"]{
+        list-style: none;
+    }
+    & ul[class="subtimeline"]:last-child::before{
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        left: -12px;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: aliceblue;
+        /* background-image: url(); */
+    }
+    & ul[class="subtimeline"]{
+        display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        list-style: none;
+        padding: 1rem;
+    }
+    /* h5 here is only for year labeling */
+    & h5{
+        width: fit-content;
+        padding: 1rem;
+        border-top: 4px solid;
+    }
+}
